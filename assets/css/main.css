@@ -5322,6 +5322,21 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+.contact .contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  align-items: center;
+  gap: 32px;
+}
+
+.contact .contact-info-column {
+  grid-column: 1;
+}
+
+.contact .contact-form-column {
+  grid-column: 2;
+}
+
 .contact .contact-info-wrapper {
   display: flex;
   flex-direction: column;
@@ -5368,9 +5383,10 @@ section,
 
 .contact .contact-form-card {
   background-color: var(--surface-color);
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.03);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
 }
 
 .contact .contact-form-card h2 {
@@ -5386,13 +5402,13 @@ section,
 }
 
 .contact .contact-form-card .form-control {
-  border-radius: 8px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
-  padding: 15px 20px;
-  height: calc(3.5rem + 2px);
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 84%);
+  padding: 13px 16px;
+  height: 52px;
   background-color: var(--surface-color);
   color: var(--default-color);
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .contact .contact-form-card .form-control:focus {
@@ -5406,7 +5422,8 @@ section,
 
 .contact .contact-form-card textarea.form-control {
   min-height: 150px;
-  margin-bottom: 25px;
+  height: auto;
+  resize: vertical;
 }
 
 .contact .btn-submit {
@@ -5472,6 +5489,16 @@ section,
 }
 
 @media (max-width: 768px) {
+  .contact .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .contact .contact-info-column,
+  .contact .contact-form-column {
+    grid-column: 1;
+  }
+
   .contact .contact-info-wrapper {
     gap: 25px;
   }
