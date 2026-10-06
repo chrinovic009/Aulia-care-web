@@ -1,0 +1,2 @@
+# Store website images as regular Git files for static deployment.
+assets/img/** -filter -diff -merge -text
